@@ -1,0 +1,81 @@
+%
+% --- Document Class
+% -------------------------------------------------------
+\documentclass[ %
+  %--- options for 'FhKtnThesis' (FH template) ---------------
+  english,                  % options: english, german
+  %--- options for 'scrreprt' (parent class) -----------------
+  % draft,
+  a4paper,
+  oneside,
+  12pt,
+  headsepline,
+  listof=totoc,
+  bibliography=totoc,
+  % "Binderandkorrektur"
+  % BCOR5mm,
+]{FhKtnThesis}
+
+
+% -------------------------------------------------------
+% --- Definitions
+% -------------------------------------------------------
+
+% thesis tile, author, matriculation number:
+\title{Document Title}
+\author{Author Name}
+\matriculationnumber{123456789}
+
+% advisors of your thesis:
+\firsttutor{First Tutor Name}
+\secondtutor{Second Tutor Name}
+
+% due date:
+\gradedate{February 28, 2014}
+
+
+% -------------------------------------------------------
+% --- Additional Packages if you need some
+% -------------------------------------------------------
+% e.g.:
+%  \usepackage{graphicx}
+% -------------------------------------------------------
+\usepackage{blindtext}
+
+% -------------------------------------------------------
+% If you need macros define them here
+% -------------------------------------------------------
+% e.g:
+%
+%  % Replaces every "\fh" withing your text with "FH Kärnten":
+%  \newcommand{\fh}{\textsc{FH Kärnten }}
+% -------------------------------------------------------
+
+
+% -------------------------------------------------------
+% --- Begin of Document
+% -------------------------------------------------------
+\begin{document}
+  \maketitle                          % title page
+  \makestatement	                      % statement (original one sucks)
+  \include{chapter/abstract}	          % abstract: change abstract.tex
+  \tableofcontents                    % table of contents (auto generated
+
+  \listoffigures                      % list of figures
+  \listoftables                       % list of tables
+  % TODO: List of abbreviations / Abkürzungsverzeichnis
+  
+  % --- include your chapters here ---
+  % e.g.:
+  %    \include{chapter/chapter1}
+  %    \include{chapter/chapter2}
+  % ----------------------------------
+  \include{chapter/example}           % some blind text for testing
+
+  % \appendix
+  % \include{chapter/appendix}
+  
+  \bibliographystyle{alpha}
+  \bibliography{bibliography/myBibliography}
+  
+\end{document}
